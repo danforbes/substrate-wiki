@@ -37,7 +37,6 @@ Request block related data. Identified by block hash or number.
         - `Header` - Block header.
         - `Body` - Block body.
         - `Receipt` - Block receipt.
-        - `Proof` - Block proof.
         - `Message` - Block message queue change proof.
     - `from`: `Hash` | `Integer` - Start listing headers starting with this hash or block number.
     - `to`: `Hash` - (optional) Stop output when this hash is met
@@ -56,7 +55,6 @@ Response to `block_request`.
     	- `header`: `Bytes` - (optional) Block header.
         - `body`: `Bytes` - (optional) Block body.
         - `receipt`: `Bytes` - (optional) Block receipt.
-        - `proof`: `Bytes` - (optional) Block proof.
         - `message`: `Bytes` - (optional) Messsage queue change proof.
 
 
