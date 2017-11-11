@@ -14,7 +14,7 @@ Current protocol version: 0
 
 Handshake message. Connecting peers must exchange status messages first. Further status messages are ignored. 
 
-0. `status` - Object.
+* `status` - Object.
     - `version`: `Integer` - Protocol Version. See header for current protocol version.
     - `roles`: [`Role`] - A list of roles that the node supports. `Role` can be one of the following
         - `Full` - Full client.
@@ -31,7 +31,8 @@ Handshake message. Connecting peers must exchange status messages first. Further
 
 Request block related data. Identified by block hash or number.
 
-0. `block_request` - Object.
+
+* `block_request` - Object.
     - `id`: `Integer` - Session unique request id.
     - `fields`: [`Field`] - A list of block data fields to request
         - `Header` - Block header.
@@ -48,7 +49,7 @@ Request block related data. Identified by block hash or number.
 
 Response to `block_request`.
 
-0. `block_response` - Object.
+* `block_response` - Object.
     - `id`: `Number` Request id for this response.
     - `blocks`: [`Block`] Block data. An object with the following fields:
         - `hash`: `Hash` - Block hash.
@@ -62,26 +63,26 @@ Response to `block_request`.
 
 Propagate transactions.
 
-0. `transactions` - Object.
+* `transactions` - Object.
     - `transactions`: [`Bytes`] Transaction set.
     
 ### block_announce
 
 Announce a new block.
 
-0. `block_announce` - Object.
+* `block_announce` - Object.
     - `header`: `Bytes` Announced block header.
 
 ## Collator to validator messages
 
 ### para_block_request
 
-0. `para_block_request` - Object.
+* `para_block_request` - Object.
     - `best_hash`: `Hash` Current best block hash.
 
 ### para_block_response
 
-0. `para_block_response` - Object.
+* `para_block_response` - Object.
     - `block`: `Bytes` Block proposal.
     - `proof`: `Bytes` Proposal proof.
     
