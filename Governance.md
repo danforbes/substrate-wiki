@@ -10,7 +10,7 @@ The governance system of Polkadot is founded wholly around the idea of stakehold
 
 On the face of it, this may seem somewhat restrictive: forcing a stakeholder-based process to do something as little as, say, nudging the block time down by 5%, seems overkill. However, without this rule the network would likely be unstable. By placing the network outside of the hands of stakeholders, it would create a misalignment that would lead to inaction or worse.
 
-However, by altering the meaning of the abstention votes (arising from stakeholders that don't make an explicit vote) we can effect different outcomes depending on the circumstances, crafting a balance of power between active and passive stakeholders.
+Despite this, by altering the meaning of the abstention votes (arising from stakeholders that don't make an explicit vote) we can effect different outcomes depending on the circumstances, crafting a balance of power between active and passive stakeholders.
 
 ### Council
 
