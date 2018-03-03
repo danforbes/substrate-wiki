@@ -18,7 +18,7 @@ To represent passive stakeholders, we introduce the idea of a "council". The cou
 
 There is no particular voting period for a seat but rather a continuous election process. All stakeholders are free to signal their approval (or not) of any of the registered candidates. As a seat becomes free, a tally is taken to find the most approved candidate, by total stake, and the seat becomes theirs. Members can be removed early only by a referendum.
 
-After an election happens, all unsuccessful candidates except for a number of runners-up are removed along with their approvals. Runners-up get to stay on (along with their approvals) ready for the next election.
+After an election happens, all unsuccessful candidates except for a number of runners-up are removed along with their approvals. Runners-up get to stay on (along with their approvals) ready for the next tally.
 
 The council is called upon for one main task of governance: proposing sensible referenda. For a referendum to be proposed by the council, a strict majority of members must be in favour, with no member exercising a veto. Vetos may be exercised only once by a member for any single proposal; if, after a cool-down period, the proposal is resubmitted, they may not veto it a second time.
 
