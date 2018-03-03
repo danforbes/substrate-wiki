@@ -26,7 +26,7 @@ In the case that all members vote in favour, the vote is considered unanimous an
 
 ### Referenda
 
-Referenda are simple, inclusive, stake-based voting schemes. Each referendum has a specific proposal associated with it which takes the form of a privileged function call in the runtime (that includes the most power call: `set_code`, which is able to alter the entire code of the runtime). They are discrete events, have a fixed period where voting happens, and then are tallied and the function call made if the vote is approved.
+Referenda are simple, inclusive, stake-based voting schemes. Each referendum has a specific proposal associated with it which takes the form of a privileged function call in the runtime (that includes the most powerful call: `set_code`, which is able to alter the entire code of the runtime). They are discrete events, have a fixed period where voting happens, and then are tallied and the function call is made if the vote is approved.
 
 Referenda can be started in multiple ways:
 
