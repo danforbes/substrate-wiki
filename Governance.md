@@ -52,3 +52,9 @@ In general:
 * Proposals submitted by unanimous council agreement need have more than 50% approval when the abstention votes are biased in their favour;
 * Proposals submitted by simple majority council agreement must win only a simple majority of explicit votes;
 * Publicly submitted proposals must have more than 50% even when the abstention votes are biased against their favour.
+
+### Public Referendums
+
+Proposals for referendums may be submitted by anyone, however they do not automatically get voted upon. When submitted, the proposer stakes a deposit (any size above a fixed minimum) and the proposal enters a queue. While a proposal is in the queue, anybody may "second" the deposit with a second deposit of the same size as the initial deposit.
+
+At a fixed interval, the item in the queue with the most stake associated with it is removed, all deposits are returned and a referendum takes place on it with each depositor being registered as voting in approval.
