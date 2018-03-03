@@ -20,9 +20,13 @@ There is no particular voting period for a seat but rather a continuous election
 
 After an election happens, all unsuccessful candidates except for a number of runners-up are removed along with their approvals. Runners-up get to stay on (along with their approvals) ready for the next tally.
 
-The council is called upon for one main task of governance: proposing sensible referenda. For a referendum to be proposed by the council, a strict majority of members must be in favour, with no member exercising a veto. Vetos may be exercised only once by a member for any single proposal; if, after a cool-down period, the proposal is resubmitted, they may not veto it a second time.
+The council is called upon primarily for two tasks of governance: proposing sensible referenda and cancelling uncontroversially dangerous or malicious referenda.
 
-In the case that all members vote in favour, the vote is considered unanimous and is treated as uncontroversial.
+For a referendum to be proposed by the council, a strict majority of members must be in favour, with no member exercising a veto. Vetos may be exercised only once by a member for any single proposal; if, after a cool-down period, the proposal is resubmitted, they may not veto it a second time. In the case that all members vote in favour, the vote is considered unanimous and is treated as uncontroversial.
+
+For a referendum to be cancelled, there must be a unanimous vote to do so. Since unanimity is a high requirement, it is expected that this measure will only be used when it is an entirely uncontroversial move. This may function as a last-resort if there is an issue found late in the day with a referendum's proposal such as a bug in the code of the runtime that the proposal would institute.
+
+If the cancelation is controversial enough that there is at least one dissenter, then it will be left to the stakeholders *en masse* to determine the fate of the proposal.
 
 ### Referenda
 
