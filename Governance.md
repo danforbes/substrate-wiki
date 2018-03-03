@@ -6,7 +6,7 @@ In order to do this, we bring together various novel mechanisms, including an am
 
 The governance system of Polkadot is founded wholly around the idea of stakeholder voting. A key and unfailing rule is:
 
-**All changes to the protocol must be agreed upon by stake-weighted referendum; 50% of stake will always command the network**
+**All changes to the protocol must be agreed upon by stake-weighted referendum; >50% of stake will always command the network**
 
 On the face of it, this may seem somewhat restrictive: forcing a stakeholder-based process to do something as little as, say, nudging the block time down by 5%, seems overkill. However, without this rule the network would likely be unstable. By placing the network outside of the hands of stakeholders, it would create a misalignment that would lead to inaction or worse.
 
@@ -53,8 +53,8 @@ In general:
 * Proposals submitted by simple majority council agreement must win only a simple majority of explicit votes;
 * Publicly submitted proposals must have more than 50% even when the abstention votes are biased against their favour.
 
-### Public Referendums
+### Public Referenda
 
-Proposals for referendums may be submitted by anyone, however they do not automatically get voted upon. When submitted, the proposer stakes a deposit (any size above a fixed minimum) and the proposal enters a queue. While a proposal is in the queue, anybody may "second" the deposit with a second deposit of the same size as the initial deposit.
+Proposals for referenda may be submitted by anyone, however they do not automatically get voted upon. When submitted, the proposer stakes a deposit (any size above a fixed minimum) and the proposal enters a queue. While a proposal is in the queue, anybody may "second" the deposit with a second deposit of the same size as the initial deposit.
 
 At a fixed interval, the item in the queue with the most stake associated with it is removed, all deposits are returned and a referendum takes place on it with each depositor being registered as voting in approval.
