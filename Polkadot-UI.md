@@ -1,3 +1,5 @@
+![Polkadot UI](https://i.imgur.com/ShUq0P9.png)
+
 Polkadot's PoC-1 Testnet already comes with an open-source, publicly accessible interface that makes it easy for anyone to start participating in the development of Polkadot.
 
 ## Getting started
