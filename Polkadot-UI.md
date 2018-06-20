@@ -1,4 +1,4 @@
-![Polkadot UI](https://i.imgur.com/ShUq0P9.png)
+![Polkadot UI](https://i.imgur.com/bEV7oGv.png)
 
 Polkadot's PoC-1 Testnet already comes with an open-source, publicly accessible interface that makes it easy for anyone to start participating in the development of Polkadot.
 
@@ -41,6 +41,8 @@ The Polkadot block explorer lists the validated blocks as they are sealed. Each 
 
 ### Extrinsics
 
+![Polkadot Extrinsics](https://i.imgur.com/ShUq0P9.png)
+
 Extrinsics are the bits of information added to the blockchain, i.e., the things 'extrinsic' from the system. These include transactions, staking, proposing, voting, and many other consensus-level actions.
 
 Start by selecting the account you wish to act with, then choose one of the following extrinsics from the extrinsics section.
@@ -80,6 +82,8 @@ This page lists your current Polkadot accounts. You can view, edit or create an 
 You can save addresses here for later use. To add a new address to your address book, click the `Add address` tab at the top
 
 ### Vanity
+
+![vanity](https://i.imgur.com/tLwi5kp.png)
 
 Polkadot UI comes with a vanity address generator in the browser. To create a vanity address, enter a string and start hashing. The longer the string, the longer it will take to compute. Note that some characters are not allowed due to the hashing algorithm used in Polkadot.
 
