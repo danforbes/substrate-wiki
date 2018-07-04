@@ -10,7 +10,7 @@ fn long_simple_calculation(some_long_variable_a: i8, some_long_variable_b: i8) -
 		+ sqrt(some_long_variable_a) - sqrt(some_long_variable_b);
 	x > 10
 }
-
+```
 - Indent level should follow open parens/brackets, but should be collapsed to the smallest number of levels actually used:
 ```
 fn calculate(some_long_variable_a: f32, some_long_variable_b: f32, some_long_variable_c: f32) -> f32 {
