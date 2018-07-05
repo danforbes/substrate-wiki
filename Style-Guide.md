@@ -3,7 +3,7 @@
 - Indent using tabs
 - Never have spaces before a non-whitespace character starts
 - Follow-on lines are only ever a single indent from the original line.
-```
+```rust
 fn long_simple_calculation(some_long_variable_a: i8, some_long_variable_b: i8) -> bool {
 	let x = some_long_variable_a * some_long_variable_b
 		- some_long_variable_b / some_long_variable_a
@@ -12,7 +12,7 @@ fn long_simple_calculation(some_long_variable_a: i8, some_long_variable_b: i8) -
 }
 ```
 - Indent level should follow open parens/brackets, but should be collapsed to the smallest number of levels actually used:
-```
+```rust
 fn calculate(some_long_variable_a: f32, some_long_variable_b: f32, some_long_variable_c: f32) -> f32 {
 	(-some_long_variable_b + sqrt(
 		// two parens open, but since we close them both on the same line, only one indent level is used
@@ -25,7 +25,7 @@ fn calculate(some_long_variable_a: f32, some_long_variable_b: f32, some_long_var
 - `where` is indented, and its items are indented one further
 - Long arg lists or function calls are indented similarly to code blocks, and once one param is indented in such a way, all others should be, too. Run-on parameter lists are also acceptable for single-line run-ons of basic function calls.
 
-```
+```rust
 fn foo(
 	really_long_parameter_name_1: SomeLongTypeName,
 	really_long_parameter_name_2: SomeLongTypeName,
@@ -37,7 +37,7 @@ fn foo(
 		really_long_parameter_name_1,
 		really_long_parameter_name_2,
 		shrt_nm_1,
-		shrt_nm_2
+		shrt_nm_2,
 	);
 	// Long, simple function call that fits onto two lines. Inline with a run-on.
 	waz(really_long_parameter_name_1, really_long_parameter_name_2,
@@ -48,7 +48,7 @@ fn foo(
 ```
 
 - Always end last item of a multi-line comma-delimited set with `,` when legal:
-```
+```rust
 struct Point<T> {
 	x: T,
 	y: T,    // <-- Multiline comma-delimited lists end with a trailing ,
@@ -59,7 +59,7 @@ enum Meal { Breakfast, Lunch, Dinner };
 ```
 
 - Avoid trailing `;`s where unneeded.
-```
+```rust
 if condition {
 	return 1    // <-- no ; here
 }
@@ -67,7 +67,7 @@ if condition {
 
 - `match` arms may be either blocks or have a trailing `,` but not both.
 - Blocks should not be used unnecessarily.
-```
+```rust
 match meal {
 	Meal::Breakfast => "eggs",
 	Meal::Lunch => { check_diet(); recipe() }
