@@ -83,4 +83,5 @@ match meal {
 //	Meal::Dinner => { return Err("Fasting") }   // WRONG
 	Meal::Dinner => return Err("Fasting"),
 }
+```
 - Indent levels should be greater than 5 only in exceptional circumstances and certainly no greater than 8. If they are greater than 5, then consider using `let` or auxiliary functions in order to strip out complex inline expressions.
