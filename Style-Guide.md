@@ -4,7 +4,7 @@
 - Never have spaces on a line prior to a non-whitespace character
 - Follow-on lines are only ever a single indent from the original line.
 ```rust
-fn long_simple_calculation(some_long_variable_a: i8, some_long_variable_b: i8) -> bool {
+fn calculation(some_long_variable_a: i8, some_long_variable_b: i8) -> bool {
 	let x = some_long_variable_a * some_long_variable_b
 		- some_long_variable_b / some_long_variable_a
 		+ sqrt(some_long_variable_a) - sqrt(some_long_variable_b);
