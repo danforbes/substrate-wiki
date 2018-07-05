@@ -1,6 +1,7 @@
 # Style Guide for Rust in Polkadot
 
 - Indent using tabs
+- Try to keep lines less than 80 characters long, and certainly no longer than 120. For this purpose, tabs are considered 4 characters wide.
 - Never have spaces on a line prior to a non-whitespace character
 - Follow-on lines are only ever a single indent from the original line.
 ```rust
@@ -13,7 +14,11 @@ fn calculation(some_long_variable_a: i8, some_long_variable_b: i8) -> bool {
 ```
 - Indent level should follow open parens/brackets, but should be collapsed to the smallest number of levels actually used:
 ```rust
-fn calculate(some_long_variable_a: f32, some_long_variable_b: f32, some_long_variable_c: f32) -> f32 {
+fn calculate(
+	some_long_variable_a: f32,
+	some_long_variable_b: f32,
+	some_long_variable_c: f32
+) -> f32 {
 	(-some_long_variable_b + sqrt(
 		// two parens open, but since we open & close them both on the
 		// same line, only one indent level is used
