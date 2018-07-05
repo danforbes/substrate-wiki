@@ -15,7 +15,7 @@ fn long_simple_calculation(some_long_variable_a: i8, some_long_variable_b: i8) -
 ```rust
 fn calculate(some_long_variable_a: f32, some_long_variable_b: f32, some_long_variable_c: f32) -> f32 {
 	(-some_long_variable_b + sqrt(
-		// two parens open, but since we close them both on the same line, only one indent level is used
+		// two parens open, but since we open & close them both on the same line, only one indent level is used
 		some_long_variable_b * some_long_variable_b
 		- 4 * some_long_variable_a * some_long_variable_c
 	// both closed here at beginning of line, so back to the original indent level
