@@ -39,14 +39,16 @@ fn foo(
 	shrt_nm_1: u8,
 	shrt_nm_2: u8
 ) {
-	// Complex line (not just a function call, also a let statement). Full structure.
+	// Complex line (not just a function call, also a let statement). Full
+	// structure.
 	let (a, b) = bar(
 		really_long_parameter_name_1,
 		really_long_parameter_name_2,
 		shrt_nm_1,
 		shrt_nm_2,
 	);
-	// Long, simple function call that fits onto two lines. Inline with a run-on.
+	// Long, simple function call that fits onto two lines. Inline with a
+	// run-on.
 	waz(really_long_parameter_name_1, really_long_parameter_name_2,
 		shrt_nm_1, shrt_nm_2);
 	// Short function call. Inline.
