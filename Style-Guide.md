@@ -1,7 +1,7 @@
 # Style Guide for Rust in Polkadot
 
 - Indent using tabs
-- Never have spaces before a non-whitespace character starts
+- Never have spaces on a line before a non-whitespace character starts
 - Follow-on lines are only ever a single indent from the original line.
 ```rust
 fn long_simple_calculation(some_long_variable_a: i8, some_long_variable_b: i8) -> bool {
