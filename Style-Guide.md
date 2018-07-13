@@ -18,7 +18,7 @@ fn calculation(some_long_variable_a: i8, some_long_variable_b: i8) -> bool {
 fn calculate(
 	some_long_variable_a: f32,
 	some_long_variable_b: f32,
-	some_long_variable_c: f32
+	some_long_variable_c: f32,
 ) -> f32 {
 	(-some_long_variable_b + sqrt(
 		// two parens open, but since we open & close them both on the
@@ -31,15 +31,29 @@ fn calculate(
 }
 ```
 - `where` is indented, and its items are indented one further
-- Long arg lists or function calls are indented similarly to code blocks, and once one param is indented in such a way, all others should be, too. Run-on parameter lists are also acceptable for single-line run-ons of basic function calls.
+- Argument lists or function invocations too long to fit on one line are indented similarly to code blocks, and once one param is indented in such a way, all others should be, too. Run-on parameter lists are also acceptable for single-line run-ons of basic function calls.
 
 ```rust
+// OK
 fn foo(
 	really_long_parameter_name_1: SomeLongTypeName,
 	really_long_parameter_name_2: SomeLongTypeName,
 	shrt_nm_1: u8,
-	shrt_nm_2: u8
+	shrt_nm_2: u8,
 ) {
+   ...
+}
+
+// NOT OK
+fn foo(really_long_parameter_name_1: SomeLongTypeName, really_long_parameter_name_2: SomeLongTypeName,
+	shrt_nm_1: u8, shrt_nm_2: u8) {
+   ...
+}
+
+```
+
+```rust
+{
 	// Complex line (not just a function call, also a let statement). Full
 	// structure.
 	let (a, b) = bar(
@@ -48,10 +62,15 @@ fn foo(
 		shrt_nm_1,
 		shrt_nm_2,
 	);
-	// Long, simple function call that fits onto two lines. Inline with a
-	// run-on.
-	waz(really_long_parameter_name_1, really_long_parameter_name_2,
-		shrt_nm_1, shrt_nm_2);
+
+	// Long, simple function call.
+	waz(
+		really_long_parameter_name_1, 
+		really_long_parameter_name_2,
+		shrt_nm_1, 
+		shrt_nm_2,
+	);
+
 	// Short function call. Inline.
 	baz(a, b);
 }
