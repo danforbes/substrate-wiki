@@ -16,16 +16,16 @@ There's a manual step in moving from an older build to a new `master` or `v0.2` 
 If you're using the defaults on Mac OS, then just run:
 
 ```sh
-mkdir -p /tmp/chains/poc-1-testnet && \
-mv ~/Library/Application\ Support/Polkadot/* /tmp/chains/poc-1-testnet && \
+mkdir -p /tmp/chains/krummelanke && \
+mv ~/Library/Application\ Support/Polkadot/* /tmp/chains/krummelanke && \
 mv /tmp/chains ~/Library/Application\ Support/Polkadot/
 ```
 
 If you have been using the `-d MY_PATH` CLI parameter before then you'll want to run:
 
 ```sh
-mkdir -p /tmp/chains/poc-1-testnet && \
-mv MY_PATH/* /tmp/chains/poc-1-testnet && \
+mkdir -p /tmp/chains/krummelanke && \
+mv MY_PATH/* /tmp/chains/krummelanke && \
 mv /tmp/chains MY_PATH/
 ```
 
