@@ -1,7 +1,7 @@
 When the change over happens:
 
-- All PoC-1 era nodes will stop. (New blocks will be available on the new libp2p network, and not on the devp2p network, and there's no nodes that exist on both.)
-- If you're already synced using a vaguely recent `master` build or `v0.1.69` or `v0.2-devp2p`, then you can easily upgrade once the changeover happens. You'll need to stop your node, upgrade the database (see below) and then start a new node build from either the `v0.2` or `master` branches.
+- All PoC-1 era nodes will stop. This is for several reasons: The Wasm heap size was too small, making them unable to process this upgrade transaction. For very recent `master` or `v0.2-devp2p` builds, if they're configured to run with a large heap size (`--min-heap-pages=1024 --max-heap-pages 1024` or `--heap-pages=1024` depending on how old your `master` branch is), new blocks will be available on the new libp2p network and not on the devp2p network, and there's no nodes that exist on both to shuttle them across.
+- If you're already synced using a recent `master` build or `v0.2-devp2p`, then you can probably upgrade. You'll need to run with `--min-heap-pages=1024 --max-heap-pages 1024` or `--heap-pages=1024` depending on how old your `master` branch is. *Once the changeover happens:* You'll need to stop your node, upgrade the database (see below) and then start a new node built from either the `v0.2` or `master` branches.
 - If you want to get started right now, then you can also switch (or start a `v0.2`/`master` node) earlier, but your node will stall until the network switches runtime.
 
 # Upgrading the Database
