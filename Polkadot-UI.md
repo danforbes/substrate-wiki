@@ -6,7 +6,7 @@ Polkadot's PoC-1 Testnet already comes with an open-source, publicly accessible 
 
 If you are already running [your own node](https://github.com/paritytech/polkadot), simply point your (webkit-compatible) browser to: https://polkadot.js.org/apps/ 
 
-If you do not want to set up your own node, just navigate to https://poc-1.polkadot.io/ to create your first Polkadot account.
+If you do not want to set up your own node, just navigate to https://poc-2.polkadot.io/ to create your first Polkadot account.
 
 #### Creating an account
 
