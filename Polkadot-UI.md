@@ -8,6 +8,8 @@ If you are already running [your own node](https://github.com/paritytech/polkado
 
 If you do not want to set up your own node, just navigate to https://poc-2.polkadot.io/ to create your first Polkadot account.
 
+The UI project is hosted on Github at https://github.com/polkadot-js/apps
+
 #### Creating an account
 
 To create a new account, navigate to the `accounts` tab and click the `Create account` button at the top of the page. Choose a name for your account, encrypt it with a strong password, then click `Save`.
