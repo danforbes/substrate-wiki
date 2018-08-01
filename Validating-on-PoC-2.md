@@ -39,8 +39,8 @@ In order to be a validator you need the following:
 - Having staked
 
 You can find more information regarding the installation of polkadot in the readme:
-- install using cargo: https://github.com/paritytech/polkadot/blob/master/README.adoc#1-to-play
-- using docker: https://github.com/paritytech/polkadot/blob/master/README.adoc#4-using-docker
+- install [using cargo](https://github.com/paritytech/polkadot/blob/master/README.adoc#1-to-play)
+- [using docker](https://github.com/paritytech/polkadot/blob/master/README.adoc#4-using-docker)
 
 ## Proper version
 
