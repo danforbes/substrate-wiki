@@ -1,5 +1,5 @@
 This guide follows [Validating on PoC-1](https://github.com/paritytech/polkadot/wiki/Validating-on-PoC-1).
-The following information has been updated to match version [0.2.1](https://github.com/paritytech/polkadot/releases/tag/v0.2.1), released August 31st 2018.
+The following information has been updated to match versions [0.2.2](https://github.com/paritytech/polkadot/releases/tag/v0.2.2), released August 1st 2018.
 
 # Introduction
 
@@ -44,7 +44,7 @@ You can find more information regarding the installation of polkadot in the read
 
 ## Proper version
 
-At the time of writing the cutting edge latest version is *not* appropriate and should *not* be used by validators. Only version 0.2.1 works.
+At the time of writing the cutting edge latest version is *not* appropriate and should *not* be used by validators. Only versions 0.2.1 and 0.2.2 work.
 
 ## --validator
 
@@ -52,12 +52,8 @@ That´s easy, just run polakdot with `--validator`.
 
 ## --key
 
-That can be a little tricky due to [#474](https://github.com/paritytech/polkadot/issues/474).
-
-First open the UI at https://poc-2.polkadot.io/#/accounts.
-
-Do NOT use the generated seed, use a string, preferable between 1 (not recommended!) and 32 chars.
-Save this seed and take note of your account´s address.
+First open the UI at https://poc-2.polkadot.io/#/accounts. Create a new account.
+Save the seed and take note of the account´s address.
 
 You can now start your node using `polkadot --validator --key <your seed here>`.
 
