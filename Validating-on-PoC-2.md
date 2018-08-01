@@ -7,7 +7,7 @@ Being a validator on the Polkadot network is simple but there are a few caveats 
 
 # Motivation
 
-First of all, validators are the heart of the network: they validate new blocks in a similar way Bitcoin miners create new blocks on the Bitcoin blockchain. Polkadot however is not based on Proof Of Work. Validators do not need high performance computers but they need to met a few conditions.
+Validators are the heart of the network: they validate new blocks in a similar way Bitcoin miners create new blocks on the Bitcoin blockchain. Polkadot however, is not based on Proof Of Work. Validators do not need high performance computers but they need to met a few conditions.
 
 As a validator, you may earn testnet [DOT](https://github.com/paritytech/polkadot/wiki/DOT)s when following the rules and keeping your node up and running. For this reason, the choice of the computer running your node is important and you may prefer a hosted VM to your home computer.
 
