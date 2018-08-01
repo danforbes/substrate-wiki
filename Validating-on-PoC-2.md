@@ -62,7 +62,7 @@ Save this seed and take note of your account´s address.
 You can now start your node using `polkadot --validator --key <your seed here>`.
 
 When polkadot starts, it will confirm and display the address of the validator´s account.
-Look for a log similar to `Using authority key 5CFch3.....` when polkadot starts. This MUST match the address of your validator´s account.
+Look for a log similar to `Using authority key 5CFch3.....` when polkadot starts. This MUST match the address of your validator´s account. If this is not the case, do not stake your account, you will get slashed.
 
 ## Some dots
 
