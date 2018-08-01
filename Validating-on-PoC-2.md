@@ -3,7 +3,7 @@ The following information has been updated to match version [0.2.1](https://gith
 
 # Introduction
 
-Being a validator on the Polkadot network is simple but there are a few caveats and you need to make it right to ensure your validator will behave itself and earn you testnet [DOT](https://github.com/paritytech/polkadot/wiki/DOT)s.
+Being a validator on the Polkadot network is simple but there are a few caveats and you need to make it right to ensure your validator will behave itself and earn you[DOT](https://github.com/paritytech/polkadot/wiki/DOT)s.
 
 # Motivation
 
