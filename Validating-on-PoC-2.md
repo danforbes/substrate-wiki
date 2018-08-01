@@ -23,6 +23,10 @@ In order to be a validator you need the following:
 - Some DOTs
 - Having staked
 
+You can find more information regarding the installation of polkadot in the readme:
+- install using cargo: https://github.com/paritytech/polkadot/blob/master/README.adoc#1-to-play
+- using docker: https://github.com/paritytech/polkadot/blob/master/README.adoc#4-using-docker
+
 ## Proper version
 
 At the time of writing the cutting edge latest version is *not* appropriate and should *not* be used by validators. Only version 0.2.1 works.
