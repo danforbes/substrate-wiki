@@ -3,17 +3,17 @@ The following information has been updated to match version [0.2.1](https://gith
 
 # Introduction
 
-Being a validator on the Polkadot network is simple but there are a few caveats and you need to make it right to ensure your validator will behave itself and earn you DOTs.
+Being a validator on the Polkadot network is simple but there are a few caveats and you need to make it right to ensure your validator will behave itself and earn you testnet DOTs.
 
 # Motivation
 
 First of all, validators are the heart of the network: they validate new blocks in a similar way Bitcoin miners create new blocks on the Bitcoin blockchain. Polkadot however is not based on Proof Of Work. Validators do not need high performance computers but they need to met a few conditions.
 
-As a validator, you may earn DOTs when following the rules and keeping your node up and running. For this reason, the choice of the computer running your node is important and you may prefer a hosted VM to your home computer.
+As a validator, you may earn testnet DOTs when following the rules and keeping your node up and running. For this reason, the choice of the computer running your node is important and you may prefer a hosted VM to your home computer.
 
 # Risk
 
-If you are elected validator and don´t behave properly (node not online/reachable, wrong software version, etc...), your node´s balance will be slashed: you will lose DOTs.
+If you are elected validator and don´t behave properly (node not online/reachable, wrong software version, etc...), your node´s balance will be slashed: you will lose testnet DOTs.
 
 # Setting a validator node in a nutshell
 
@@ -22,11 +22,11 @@ It is advised to do the following in the right order to avoid issues:
 - install an appropriate polkadot version
 - start it without any flag until your node is synced
 - create an account using the [Polkadot UI](https://github.com/paritytech/polkadot/wiki/Polkadot-UI), save your seed and take note of your account´s address
-- get DOTs in your account
+- get testnet DOTs in your account
 - restart your polkadot client with `polkadot --validator --key <seed>`
 - check that your authority key matches
 - `Extrinsics/staking/stake()` your account
-- check that you show up in the `Storage/staking/intensions()` list
+- check that you show up in the `Storage/staking/intentions()` list
 - wait until you show up in the `Storage/session/validators()` list
 - observe your balance going hopefully up!
 
@@ -35,7 +35,7 @@ It is advised to do the following in the right order to avoid issues:
 In order to be a validator you need the following:
 - A node running a proper version of the polkadot client
 - A node started with both `--validator` and `--key ...`. More on that below
-- Some DOTs
+- Some testnet DOTs
 - Having staked
 
 You can find more information regarding the installation of polkadot in the readme:
@@ -64,9 +64,9 @@ You can now start your node using `polkadot --validator --key <your seed here>`.
 When polkadot starts, it will confirm and display the address of the validator´s account.
 Look for a log similar to `Using authority key 5CFch3.....` when polkadot starts. This MUST match the address of your validator´s account. If this is not the case, do not stake your account, you will get slashed.
 
-## Some dots
+## Some testnet DOTs
 
-In order for your validator account to be granted the right to validate, you will need DOTs in that account, enough in regards to the other validator candidates.
+In order for your validator account to be granted the right to validate, you will need testnet DOTs in that account, enough in regards to the other validator candidates.
 
 You may ask for testnet DOTs on Riot in #polkadot-watercooler:matrix.org).
 
