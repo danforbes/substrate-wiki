@@ -56,7 +56,7 @@ That can be a little tricky due to [#474](https://github.com/paritytech/polkadot
 
 First open the UI at https://poc-2.polkadot.io/#/accounts.
 
-Do NOT use the generated seed, use a string, preferable between 32 and 60 chars.
+Do NOT use the generated seed, use a string, preferable between 1 (not recommended!) and 32 chars.
 Save this seed and take note of your account´s address.
 
 You can now start your node using `polkadot --validator --key <your seed here>`.
