@@ -13,4 +13,4 @@ Testnet DOTs do not have any value beside allowing you to experiment with the ne
 
 You may obtain DOTs for the test network on Riot: https://riot.im/app/#/room/#polkadot-watercooler:matrix.org
 
-You may also make your own DOTs is you [become a Validator](https://github.com/paritytech/polkadot/wiki/Validating-on-PoC-2).
+You may also make your own DOTs if you [become a Validator](https://github.com/paritytech/polkadot/wiki/Validating-on-PoC-2).
