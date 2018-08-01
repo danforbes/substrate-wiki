@@ -21,14 +21,14 @@ The next chapter goes into more details but here is the recipe.
 It is advised to do the following in the right order to avoid issues:
 - install an appropriate polkadot version
 - start it without any flag until your node is synced
-- create an account, save your seed and take note of your account´s address
+- create an account using the [Polkadot UI](https://github.com/paritytech/polkadot/wiki/Polkadot-UI), save your seed and take note of your account´s address
 - get DOTs in your account
 - restart your polkadot client with `polkadot --validator --key <seed>`
 - check that your authority key matches
 - `Extrinsics/staking/stake()` your account
-- check that you show up in the intensions list
-- wait until you show up in the validators list
-- observe your balance
+- check that you show up in the `Storage/staking/intensions()` list
+- wait until you show up in the `Storage/session/validators()` list
+- observe your balance going hopefully up!
 
 # Validator Requirements
 
