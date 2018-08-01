@@ -15,6 +15,21 @@ As a validator, you will earn DOTs when following the rules and keeping your nod
 
 If you are elected validator and don´t behave properly (node not online/reachable, wrong software version, etc...), your node´s balance will be slashed: you will lose DOTs.
 
+# Setting a validator node in a nutshell
+
+The next chapter goes into more details but here is the recipe.
+It is advised to do the following in the right order to avoid issues:
+- install an appropriate polkadot version
+- start it without any flag until your node is synced
+- create an account, save your seed and take note of your account´s address
+- get DOTs in your account
+- restart your polkadot client with `polkadot --validator --key <seed>`
+- check that your authority key matches
+- `Extrinsics/staking/stake()` your account
+- check that you show up in the intensions list
+- wait until you show up in the validators list
+- observe your balance
+
 # Validator Requirements
 
 In order to be a validator you need the following:
@@ -68,16 +83,4 @@ You are now almost good to go. You may be elected validator if there are enough 
 
 Currently, there are 5 slots available. The dev team is operating 4 validators with high stake. That leaves one slot free for community validators. The number of available slots will likely vary over time.
 
-# Setting a validator node in a nutshell
 
-It is advised to do the following in the right order to avoid issues:
-- install an appropriate polkadot version
-- start it without any flag until your node is synced
-- create an account, save your seed and take note of your account´s address
-- get DOTs in your account
-- restart your polkadot client with `polkadot --validator --key <seed>`
-- check that your authority key matches
-- Stake() your account
-- check that you show up in the intensions list
-- wait until you show up in the validators list
-- observe your balance
