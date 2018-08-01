@@ -63,3 +63,17 @@ If you did it right, you should see your account´s address showing in the inten
 You are now almost good to go. You may be elected validator if there are enough free slots and your stake (balance) is higher than the other validator candidates.
 
 Currently, there are 5 slots available. The dev team is operating 4 validators with high stake. That leaves one slot free for community validators. The number of available slots will likely vary over time.
+
+# Setting a validator node in a nutshell
+
+It is advised to do the following in the right order to avoid issues:
+- install an appropriate polkadot version
+- start it without any flag until your node is synced
+- create an account, save your seed and take note of your account´s address
+- get DOTs in your account
+- restart your polkadot client with `polkadot --validator --key <seed>`
+- check that your authority key matches
+- Stake() your account
+- check that you show up in the intensions list
+- wait until you show up in the validators list
+- observe your balance
