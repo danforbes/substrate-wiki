@@ -81,6 +81,6 @@ If you did it right, you should see your account´s address showing in the inten
 
 You are now almost good to go. You may be elected validator if there are enough free slots and your stake (balance) is higher than the other validator candidates.
 
-Currently, there are 5 slots available. The dev team is operating 4 validators with high stake. That leaves one slot free for community validators. The number of available slots will likely vary over time.
+Currently, there are 5 slots available. The dev team is operating 4 validators with high stake. That leaves one slot free for community validators. The number of available slots will likely vary over time. To check the current value, use the UI at `Storage/statking/validatorCount()`.
 
 
