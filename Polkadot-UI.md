@@ -1,10 +1,10 @@
 ![Polkadot UI](https://i.imgur.com/bEV7oGv.png)
 
-Polkadot's PoC-1 Testnet already comes with an open-source, publicly accessible interface that makes it easy for anyone to start participating in the development of Polkadot.
+Polkadot already comes with an open-source, publicly accessible interface that makes it easy for anyone to connect with the Krumme Lanke testnet. The main repo by @jacogr can be found [here](https://github.com/polkadot-js/apps).
 
 ## Getting started
 
-If you are already running [your own node](https://github.com/paritytech/polkadot), simply point your (webkit-compatible) browser to: https://polkadot.js.org/apps/ 
+If you are already running [your own node](https://github.com/paritytech/polkadot), simply point your Chrome/Chromium browser to: https://polkadot.js.org/apps/ 
 
 If you do not want to set up your own node, just navigate to https://poc-2.polkadot.io/ to create your first Polkadot account.
 
