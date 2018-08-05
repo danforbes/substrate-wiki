@@ -41,6 +41,12 @@ The Polkadot block explorer lists the validated blocks as they are sealed. Each 
 
 - state root (merkle root of all the storage)
 
+### Staking
+
+From here you'll be able to stake your entire account's balance to become a validator, and you can also nominate specific validators.
+
+Note: when staking or nominating, currently you cannot transfer DOTs from these accounts. It is recommended to create extra accounts specifically for staking, validating, and nominating.
+
 ### Extrinsics
 
 ![Polkadot Extrinsics](https://i.imgur.com/ShUq0P9.png)
