@@ -8,6 +8,7 @@ https://poc-2.polkadot.io/#/storage > parachains > activeParachains()
 
 Obtain Basic Adder Example by Rob (was in branch rh-simple-parachain)
 https://github.com/paritytech/polkadot/tree/master/polkadot/parachain/test-chains/basic_add
+or try fork of the Basic Adder by Adrian (apparently fixes compile errors)
 
 Also try adder-collator in branch rh-simple-parachain (appears to have disappeared...). Run adder-collator binary with arguments to connect it to validators in the network, which also runs the relay chain
 OR try fork of the Basic Adder by Adrian (apparently fixes compile errors)
