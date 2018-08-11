@@ -6,13 +6,17 @@ https://poc-2.polkadot.io/#/storage > parachains > activeParachains()
 
 ## Create Parachain
 
-Obtain Basic Adder Example by Rob (was in branch rh-simple-parachain)
-https://github.com/paritytech/polkadot/tree/master/polkadot/parachain/test-chains/basic_add
-or try fork of the Basic Adder by Adrian (apparently fixes compile errors)
+Obtain WebAssembly code for Basic Adder Example by rphmeier: 
 
-Also try adder-collator in branch rh-simple-parachain (appears to have disappeared...). Run adder-collator binary with arguments to connect it to validators in the network, which also runs the relay chain
-OR try fork of the Basic Adder by Adrian (apparently fixes compile errors)
-https://github.com/adrianbrink/polkadot/tree/ab/fix_adder
+Download from https://github.com/paritytech/polkadot/blob/4af260fea194d807a48f63dbd4b4595d4be91744/polkadot/parachain/tests/res/adder.wasm (possibly outdated)
+
+or look in the `polkadot/parachain/tests/res/` folder on master.
+
+Run the adder-collator binary with arguments to connect it to validators in the network, which also runs the relay chain. 
+
+```rust
+cargo run -p adder-collator -- ARGS_GO_HERE
+```
 
 ## Deploy Parachain
 
