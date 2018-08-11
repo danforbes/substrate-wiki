@@ -12,7 +12,7 @@ Download from https://github.com/paritytech/polkadot/blob/4af260fea194d807a48f63
 
 or look in the `polkadot/parachain/tests/res/` folder on master.
 
-Run the adder-collator binary with arguments to connect it to validators in the network, which also runs the relay chain. 
+Run the adder-collator binary with arguments to connect it to validators in the network, which also runs the relay chain. It will help if you have validators' node IDs to connect to.
 
 ```rust
 cargo run -p adder-collator -- ARGS_GO_HERE
