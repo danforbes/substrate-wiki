@@ -1,6 +1,6 @@
-## Extrinsic format aka Transaction format
+## Polkadot Extrinsic format aka Transaction format
 
-Extrinsics are a bare binary format. All numerics are in LE format. It is the concatenation of these fields:
+Polkadot Extrinsics are currently a bare binary format.  All numerics are in LE format. It is the concatenation of these fields:
 
 - 4 bytes: 32-bit length of the extrinsic data, *not including* these 4 bytes.
 - 32 bytes: 256-bit Ed25519 public key of the sender.
