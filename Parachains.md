@@ -58,3 +58,6 @@ Basic Adder (Test) Parachain is too simple for transactions to be executed again
 References:
 
 Above summary has been built by @luke based on notes I've taken by following comments made by @rphmeier, @jaco, @adrianbrink in #polkadot-watercooler
+
+
+You can read more about Parachains at https://github.com/w3f/Web3-wiki/wiki/Parachains
