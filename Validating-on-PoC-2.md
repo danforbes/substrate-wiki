@@ -1,5 +1,5 @@
 This guide follows [Validating on PoC-1](https://github.com/paritytech/polkadot/wiki/Validating-on-PoC-1).
-The following information has been updated to match versions [0.2.2](https://github.com/paritytech/polkadot/releases/tag/v0.2.2), released August 1st 2018.
+The following information has been updated to match versions [0.2.14](https://github.com/paritytech/polkadot/releases/tag/v0.2.14), released Sept 2018.
 
 # Introduction
 
@@ -19,7 +19,7 @@ If you are elected validator and don´t behave properly (node not online/reachab
 
 The next chapter goes into more details but here is the recipe.
 It is advised to do the following in the right order to avoid issues:
-- install an appropriate polkadot version
+- install an appropriate polkadot version (the very latest may not always be the best, ask around)
 - start it without any flag until your node is synced
 - create an account using the [Polkadot UI](https://github.com/paritytech/polkadot/wiki/Polkadot-UI), save your seed and take note of your account´s address
 - get testnet [DOT](https://github.com/paritytech/polkadot/wiki/DOT)s in your account
@@ -44,7 +44,7 @@ You can find more information regarding the installation of polkadot in the read
 
 ## Proper version
 
-At the time of writing the cutting edge latest version is *not* appropriate and should *not* be used by validators. Only versions 0.2.1 and 0.2.2 work.
+At the time of writing the cutting edge latest version is *not* appropriate and should *not* be used by validators. The current version is 0.2.14
 
 ## --validator
 
@@ -77,6 +77,6 @@ If you did it right, you should see your account´s address showing in the inten
 
 You are now almost good to go. You may be elected validator if there are enough free slots and your stake (balance) is higher than the other validator candidates.
 
-Currently, there are 5 slots available. The dev team is operating 4 validators with high stake. That leaves one slot free for community validators. The number of available slots will likely vary over time. To check the current value, use the UI at `Storage/staking/validatorCount()`.
+Currently, there are 22 slots available. The dev team is operating 4 validators with high stake. That leaves one slot free for community validators. The number of available slots will likely vary over time. To check the current value, use the UI at `Storage/staking/validatorCount()`.
 
 
