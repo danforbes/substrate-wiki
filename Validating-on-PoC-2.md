@@ -15,6 +15,15 @@ As a validator, you may earn testnet [DOT](https://github.com/paritytech/polkado
 
 If you are elected validator and don´t behave properly (node not online/reachable, wrong software version, etc...), your node´s balance will be slashed: you will lose testnet DOTs.
 
+You can mitigate those risks and decide how many slashes you are willing to tolerate on your validator before it gets automatically unstaked.
+
+Slashing starts with a 1000 DOTs penalty and doubles. If your node successfully passes a session, the current penalty is reduced by 50% with a minimum of 1000 DOTs.
+
+To set the max amount of times your validator will be slashed you need your intensions´ id.
+Get it from the storage from ´staking/intentions()`.
+
+You may then send the extrinsic `staking/registerSlashPreference(...)` passing your intensions´ id and the max number of slashes before your validator will be unstaked.
+
 # Setting a validator node in a nutshell
 
 The next chapter goes into more details but here is the recipe.
