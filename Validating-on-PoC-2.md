@@ -24,6 +24,10 @@ Get it from the storage from `staking/intentions()`.
 
 You may then send the extrinsic `staking/registerSlashPreference(...)` passing your intensions´ id and the max number of slashes before your validator will be unstaked.
 
+You may then check the storage state with `staking/slashPreferenceOf(...)`.
+
+The default value is 3. This limits your losses to 1000+2000+4000=7k DOTs.
+
 # Setting a validator node in a nutshell
 
 The next chapter goes into more details but here is the recipe.
