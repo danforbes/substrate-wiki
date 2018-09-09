@@ -20,7 +20,7 @@ You can mitigate those risks and decide how many slashes you are willing to tole
 Slashing starts with a 1000 DOTs penalty and doubles. If your node successfully passes a session, the current penalty is reduced by 50% with a minimum of 1000 DOTs.
 
 To set the max amount of times your validator will be slashed you need your intensions´ id.
-Get it from the storage from ´staking/intentions()`.
+Get it from the storage from `staking/intentions()`.
 
 You may then send the extrinsic `staking/registerSlashPreference(...)` passing your intensions´ id and the max number of slashes before your validator will be unstaked.
 
