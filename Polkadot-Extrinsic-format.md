@@ -1,5 +1,7 @@
 ## Polkadot Extrinsic format aka Transaction format
 
+This is out of date. Please see https://github.com/paritytech/substrate/pull/195 for more information.
+
 Polkadot Extrinsics are currently a bare binary format.  All numerics are in LE format. It is the concatenation of these fields:
 
 - 4 bytes: 32-bit length of the extrinsic data, *not including* these 4 bytes.
