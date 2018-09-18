@@ -61,3 +61,6 @@ Above summary has been built by @luke based on notes I've taken by following com
 
 
 You can read more about Parachains at https://github.com/w3f/Web3-wiki/wiki/Parachains
+
+### TODO
+* Update to incorporate comments in discussion between @jacogr and @miketang https://matrix.to/#/!fOOzymDEHiIIUtmlBE:matrix.org/$1537192171559673aeHoK:matrix.org
