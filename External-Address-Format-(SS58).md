@@ -34,16 +34,8 @@ There are 16 different address formats, identified by the length (in bytes) of t
 - 5 bytes: 2 byte account index, 2 byte checksum
 - 6 bytes: 4 byte account index, 1 byte checksum
 - 7 bytes: 4 byte account index, 2 byte checksum
-- 8 bytes: 4 byte account index, 3 byte checksum
-- 9 bytes: 4 byte account index, 4 byte checksum
 - 10 bytes: 8 byte account index, 1 byte checksum
 - 11 bytes: 8 byte account index, 2 byte checksum
-- 12 bytes: 8 byte account index, 3 byte checksum
-- 13 bytes: 8 byte account index, 4 byte checksum
-- 14 bytes: 8 byte account index, 5 byte checksum
-- 15 bytes: 8 byte account index, 6 byte checksum
-- 16 bytes: 8 byte account index, 7 byte checksum
-- 17 bytes: 8 byte account index, 8 byte checksum
 - 34 bytes: 32 byte account id, 2 byte checksum
 
 ## Checksum types
