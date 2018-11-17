@@ -37,7 +37,7 @@ Note: View Minimum Deposit that's required at https://poc-2.polkadot.io/#/storag
 
 NOTE: Remember the REFERENDUM_ID
 
-### Wait unit REFERENDUM_ID is a Proposed Referendum (aka Proposed Referenda)
+### Wait until REFERENDUM_ID is a Proposed Referendum (aka Proposed Referenda)
 View Referendum Info / Count
 https://poc-2.polkadot.io/#/storage > democracy > referendumInfoOf(referendum) > enter REFERENDUM_ID > click "+" (then just wait for it to appear)
 https://poc-2.polkadot.io/#/storage > democracy > referendumCount() >click "+""
