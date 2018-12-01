@@ -64,3 +64,6 @@ You can read more about Parachains at https://github.com/w3f/Web3-wiki/wiki/Para
 
 ### TODO
 * Update to incorporate comments in discussion between @jacogr and @miketang https://matrix.to/#/!fOOzymDEHiIIUtmlBE:matrix.org/$1537192171559673aeHoK:matrix.org
+
+### Links
+* Opportunities to build parachains - https://github.com/w3f/Web3-collaboration/issues/11
