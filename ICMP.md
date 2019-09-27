@@ -30,7 +30,7 @@ To understand ICMP it is first important to understand the guarantees that Polka
 (head_data', messages_out) = V(head_data, extrinsics, witness, messages_in)
 ```
 
-`V` is the validation function; a piece of WebAssembly that checks that the parachain's state-transition is actually valid. It relates a new state of the chain `head_data'` and a set of messages out to a digest of the previous state of the chain `head_data` (this is either the parachain's header or a hash of it), data from the external world `extrinsics` (these are typically just transactions), and a set of messages that go into the chain that have been faithfully routed from other parachains or the Relay-chain.
+`V` is the validation function; a piece of WebAssembly that checks that the parachain's state-transition is actually valid. It relates a new state of the chain (`head_data'`) and a set of `messages_out` to a digest of the previous state of the chain (`head_data`; this is either the parachain's header or a hash of it), data from the external world (`extrinsics`; these are typically just transactions), and a set of `messages_in` that go into the chain and which have been faithfully routed from other parachains or the Relay-chain.
 
 The Relay-chain's cryptographic security apparatus (i.e. a subset of the validators, allowing for escalation to all validators in the case of a misbehaviour claim) not only ensures that all finalised transitions of parachains satisfy `V`, but also, crucially, that `messages_in` is a faithful representation of the messages that were sent from other chains in the system, in order.
 
