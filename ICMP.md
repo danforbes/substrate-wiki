@@ -58,9 +58,13 @@ This matrix allows future parachain validators to verify that a given `messages_
 
 ## Data availability
 
+There is, however, an issue: the availability of the message data. In the above model, the relay-chain only is only able to provide an indication that a later block has a valid `messages_in` field. On its own, it cannot help collators actually construct such a field, since the relay chain doesn't explicitly store the messages. Because of this, if a malicious set of parachain validators attested to a `messages_out` hash that did not actually represent any payload, then a victim parachain's collators would never be able to construct a `messages_in` hash that fulfilled the pre-image requirements. This is an example of the data availability problem.
 
+In Polkadot's ICMP, strict data availability is addressed through requiring the same group of validators that *finalise* the relay-chain blocks to provide guarantees on the availability of all extrinsic and transient data that is not stored on-chain. This includes lateral message payloads, downward message payloads and parachain blocks. Data is stored across the network in an efficient erasure coding format tolerant to 33% of the nodes being offline, and thus providing the a similar relief of failure as the finality algorithm itself, the argument being that if finalisation occurs then it's highly likely that a sufficient number of honest and active nodes exist to reconstruct any data needed for creation of valid future blocks.
 
+It is expected that this form of availability will be needed only as a security safe-guard; honest Polkadot validators and collators will have the data ready for distribution and in normal operation it will be gossiped freely.
 
+More information on this can be found on the [Web3 Foundation's research team pages](research.web3.foundation).
 
 ## APIs
 
