@@ -18,7 +18,7 @@ For the present purposes, we define the term "message" in much the same way as "
 
 In short, ICMP is not and is unlikely ever to form a "standard" in the typical sense of the word. It is an area of technology that is reliant upon, and proprietary to, Polkadot.
 
-The two features of *shared security* and *trust-free message-passing* are inextricably linked; more specifically, the second directly implies the first. Other systems that attempt to allow one without the other are generally unfit for purpose since, except in the most trivial of circumstances, causally linking chains with different security guarantees generally implies that all chains in the graph will suffer the security implications of the weakest.
+The two features of *shared security* and *trust-free message-passing* are inextricably linked; more specifically, the second directly implies the first. Other systems that attempt to allow one without the other are generally unfit for purpose since, except in the most trivial of circumstances, causality is transitive and thus linking chains with different security guarantees implies that all chains in the graph will suffer the security implications of the weakest.
 
 There are workarounds, for example by avoiding general peer-to-peer connectivity and instead nominating and appointing a central chain with both sufficient logic and security guarantees for the specific semantics required. However this is inflexible, unscalable and doesn't address the fact that by *not* sharing the security resources (i.e. slashable capital) such a system is essentially *dividing-and-conquering* its own resources.
 
