@@ -92,7 +92,7 @@ enum EndPoint { Relay, Para(ParaId) }
 
 Other options include one-call-per-message and one-call-per-block models, or perhaps having the option of all three with default implementations. This would be called at block initialisation.
 
-As an alternative to this trait-based system, the API may make it possible to simply inspected the incoming messages at any point during block execution. In this case, the parachain's SRML runtime would likely implement a trait:
+As an alternative to this call-back system, the API may make it possible to simply inspect the incoming messages at any point during block execution. In this case, the parachain's SRML runtime would likely implement a trait:
 
 ```
 trait WithIncoming {
@@ -100,8 +100,8 @@ trait WithIncoming {
 }
 ```
 
-Once Cumulus is finalised, this will be updated to the actual API.
+Again, once Cumulus is finalised, this will be updated to the actual API.
 
-The third API abstraction level is easiest and requires little work on the part of the chain. It piggy-backs on Substrate's `Origin` API and existing transaction-processing system in order to interpret in much the same way as transactions/extrinsics. Messages are subject to the same fee payment, weight and and validity checks as transactions and are dispatched in the same way. The main difference is that they are not (or may not TBD) be dispatched with a `Signed` origin, but rather with a `Para` or `Relay` origin, allowing the dispatchable functions of all modules of the parachain to easily verify their provenance and/or remain forwards compatible.
+The third API abstraction level is easiest and requires little work on the part of the chain. It piggy-backs on Substrate's `Origin` API and existing transaction-processing system in order to interpret messages in much the same way as transactions/extrinsics. Messages are subject to the same fee payment, weight and and validity checks as transactions and are dispatched in the same way. The main difference is that they are not (or may not, TBD) be dispatched with a `Signed` origin, but rather with a `Para` or `Relay` origin, allowing the dispatchable functions of all modules of the parachain to easily verify their provenance and/or remain forwards compatible.
 
 Finally, Spree, an innovation allowing trustless forward-guarantees on the semantics of messages between parachains, will allow for interoperation of the parachains through symmetrical APIs. These APIs have attached logic, protected from the rest of the parachain's operation, which is able to send and receive messages. It has its own logical endpoint, distinct that of the rest of the parachain and other Spree modules. In this way, it opaquely governs the actual message content sent between chains. Spree modules are an asset shared across the Relay-chain, and may only be upgraded all-at-once. Because Spree modules are guaranteed to only ever communication with other Spree modules of the same type and version, we can avoiding the need for any fixed communications standards and can make absolute guarantees over the implications of the messages sent, regardless of changes and upgrades to the parachain itself.
