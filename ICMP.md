@@ -75,7 +75,7 @@ The APIs for message passing revolve merely on making the inputs and outputs of 
 - Substrate-based chain using the default message dispatching module;
 - Spree module APIs.
 
-The first is useful for those who are interested in building their own parachains from scratch with without reference to Substrate. In this case other languages (AssemblyScript, C++ or anything that can be targeted to WebAssembly) may be used. It takes the form of an entry point in WebAssembly with offsets and sizes relating to encoded items of the block including the messages in. Further, solid information will be published here once ready.
+The first is useful for those who are interested in building their own parachains from scratch without reference to Substrate. In this case other languages (AssemblyScript, C++ or indeed anything that can be targeted to WebAssembly) may be used. It takes the form of an entry point in WebAssembly with an offset and size passed in that allow a blob to be found a decoded to give the various arguments to the block validation function. Further, solid information will be published here once Cumulus is ready.
 
 The second is useful for those who wish to build a parachain on Substrate but who wish to interpret the byte messages coming from parachains directly. This allows arbitrary formats of messages to be supported, but does mean that any actions to be done on receipt of messages must be coded manually.
 
