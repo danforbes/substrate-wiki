@@ -42,7 +42,7 @@ EndPoint: enum { Para(uint32), Relay }
 
 The actual data formats that go into and out of the validation function are trivial: messages are merely a set of pairs of endpoints and blob-vectors. Parachains are identified by a 32-bit integer given to them on registration. Messages destined for the Relay-chain need no further identifier.
 
-## Message relaying
+### Message relaying
 
 When a parachain has a block validated and its state transitioned ready for finalisation, details of the transition are deposited on the relay-chain. To avoid the relay-chain becoming a bottleneck for both validation and data throughput, specifics relating to the transition itself are kept minimal, with correctness relying on crypto-economic games and cryptographic digests.
 
@@ -56,7 +56,7 @@ In this way, a single hash suffices for each batch of messages sent between each
 
 This matrix allows future parachain validators to verify that a given `messages_in` queue is valid and by doing so allows Polkadot's shared security to make trust-free guarantees on message delivery.
 
-## Data availability
+### Data availability
 
 There is, however, an issue: the availability of the message data. In the above model, the relay-chain only is only able to provide an indication that a later block has a valid `messages_in` field. On its own, it cannot help collators actually construct such a field, since the relay chain doesn't explicitly store the messages. Because of this, if a malicious set of parachain validators attested to a `messages_out` hash that did not actually represent any payload, then a victim parachain's collators would never be able to construct a `messages_in` hash that fulfilled the pre-image requirements. This is an example of the data availability problem.
 
@@ -68,5 +68,40 @@ More information on this can be found on the [Web3 Foundation's research team pa
 
 ## APIs
 
+The APIs for message passing revolve merely on making the inputs and outputs of the parachain block validation function available to the parachain logic. There are four points of abstraction that these APIs may take place:
 
+- Raw WebAssembly validation function;
+- Substrate-based chain using the basic runtime APIs;
+- Substrate-based chain using the default message dispatching module;
+- Spree module APIs.
 
+The first is useful for those who are interested in building their own parachains from scratch with without reference to Substrate. In this case other languages (AssemblyScript, C++ or anything that can be targeted to WebAssembly) may be used. It takes the form of an entry point in WebAssembly with offsets and sizes relating to encoded items of the block including the messages in. Further, solid information will be published here once ready.
+
+The second is useful for those who wish to build a parachain on Substrate but who wish to interpret the byte messages coming from parachains directly. This allows arbitrary formats of messages to be supported, but does mean that any actions to be done on receipt of messages must be coded manually.
+
+Though still under development, it will likely take the form of a single type provided as a generic argument to an element of the SRML/Cumulus API responsible for interpreting blocks (quite possibly referenced from the executive module).
+
+The trait will look something like:
+
+```
+trait HandleIncoming {
+  fn handle_incoming(sender: EndPoint, messages: &[Vec<u8>]);
+}
+enum EndPoint { Relay, Para(ParaId) }
+```
+
+Other options include one-call-per-message and one-call-per-block models, or perhaps having the option of all three with default implementations. This would be called at block initialisation.
+
+As an alternative to this trait-based system, the API may make it possible to simply inspected the incoming messages at any point during block execution. In this case, the parachain's SRML runtime would likely implement a trait:
+
+```
+trait WithIncoming {
+  fn with_incoming(sender: EndPoint, f: impl FnOnce(&[Vec<u8>]));
+}
+```
+
+Once Cumulus is finalised, this will be updated to the actual API.
+
+The third API abstraction level is easiest and requires little work on the part of the chain. It piggy-backs on Substrate's `Origin` API and existing transaction-processing system in order to interpret in much the same way as transactions/extrinsics. Messages are subject to the same fee payment, weight and and validity checks as transactions and are dispatched in the same way. The main difference is that they are not (or may not TBD) be dispatched with a `Signed` origin, but rather with a `Para` or `Relay` origin, allowing the dispatchable functions of all modules of the parachain to easily verify their provenance and/or remain forwards compatible.
+
+Finally, Spree, an innovation allowing trustless forward-guarantees on the semantics of messages between parachains, will allow for interoperation of the parachains through symmetrical APIs. These APIs have attached logic, protected from the rest of the parachain's operation, which is able to send and receive messages. It has its own logical endpoint, distinct that of the rest of the parachain and other Spree modules. In this way, it opaquely governs the actual message content sent between chains. Spree modules are an asset shared across the Relay-chain, and may only be upgraded all-at-once. Because Spree modules are guaranteed to only ever communication with other Spree modules of the same type and version, we can avoiding the need for any fixed communications standards and can make absolute guarantees over the implications of the messages sent, regardless of changes and upgrades to the parachain itself.
