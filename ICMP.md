@@ -20,7 +20,7 @@ In short, ICMP is not and is unlikely ever to form a "standard" in the typical s
 
 The two features of *shared security* and *trust-free message-passing* are inextricably linked; more specifically, the second directly implies the first. Other systems that attempt to allow one without the other are generally unfit for purpose since, except in the most trivial of circumstances, causality is transitive and thus linking chains with different security guarantees implies that all chains in the graph will suffer the security implications of the weakest.
 
-There are workarounds, for example by avoiding general peer-to-peer connectivity and instead nominating and appointing a central chain with both sufficient logic to comprehend all messages and sufficient state to be able to evaluate their validity. However these requirements result in a system that is inflexible (all message's semantics must be on the hub), unscalable (all global data allowing validation of messages must be on the hub) and doesn't address the fact that by *not* sharing the security resources (i.e. slashable capital) such a system is essentially *dividing-and-conquering* itself.
+There are workarounds, for example by avoiding general peer-to-peer connectivity and instead nominating and appointing a central chain with both sufficient logic to comprehend all messages and sufficient state to be able to evaluate their validity. However these requirements result in a system that is inflexible (all message's semantics must be on the hub), unscalable (all global data allowing validation of messages must be on the hub) and doesn't address the fact that by *not* sharing the security resources (i.e. slashable capital) such a system is essentially *dividing-and-conquering* itself!
 
 ### Validation
 
