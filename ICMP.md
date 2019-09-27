@@ -27,12 +27,12 @@ There are workarounds, for example by avoiding general peer-to-peer connectivity
 To understand ICMP it is first important to understand the guarantees that Polkadot gives. Polkadot is comprised of one single Relay-chain and a number (we hope around 100) *parachains*. (Parachains may be time-sliced into *parathreads*, but that is out of scope at present.) Parachains are an absolutely simple single state-transition system. All are defined by a pure function:
 
 ```
-V(head_data', head_data, extrinsics, witness, messages_in, messages_out)
+(head_data', messages_out) = V(head_data, extrinsics, witness, messages_in)
 ```
 
-`V` is the validation function; a piece of WebAssembly that checks that the parachain's state-transition is actually valid. It accepts a digest of the previous state of the chain `head_data` (this is either the parachain's header or a hash of it), data from the external world `extrinsics` (these are typically just transactions), and the messages into and out of the chain that are to be routed to either other parachains or the Relay-chain.
+`V` is the validation function; a piece of WebAssembly that checks that the parachain's state-transition is actually valid. It relates a new state of the chain `head_data'` and a set of messages out to a digest of the previous state of the chain `head_data` (this is either the parachain's header or a hash of it), data from the external world `extrinsics` (these are typically just transactions), and a set of messages that go into the chain that have been faithfully routed from other parachains or the Relay-chain.
 
-The Relay-chain's cryptographic security apparatus (i.e. a subset of the validators, allowing for escalation to all validators in the case of a misbehaviour claim) ensures that `V` is always true for all finalised parachain blocks.
+The Relay-chain's cryptographic security apparatus (i.e. a subset of the validators, allowing for escalation to all validators in the case of a misbehaviour claim) not only ensures that all finalised transitions of parachains satisfy `V`, but also, crucially, that `messages_in` is a faithful representation of the messages that were sent from other chains in the system, in order.
 
 ```
 messages_in: Vec<EndPoint, Vec<Vec<u8>>>
@@ -42,7 +42,27 @@ EndPoint: enum { Para(uint32), Relay }
 
 The actual data formats that go into and out of the validation function are trivial: messages are merely a set of pairs of endpoints and blob-vectors. Parachains are identified by a 32-bit integer given to them on registration. Messages destined for the Relay-chain need no further identifier.
 
+## Message relaying
+
+When a parachain has a block validated and its state transitioned ready for finalisation, details of the transition are deposited on the relay-chain. To avoid the relay-chain becoming a bottleneck for both validation and data throughput, specifics relating to the transition itself are kept minimal, with correctness relying on crypto-economic games and cryptographic digests.
+
+Of the three possible endpoint combinations, namely *upward* (parachain to relay-chain), *downward* (relay-chain to parachain) and *lateral* (parachain-to-parachain), only for upward messages does the message payload actually get stored/queued on the relay-chain, taking up state. These messages are processed in a simple round-robin fashion and there are safeguards both on the number and the size of the messages allowed. They are interpreted in almost exactly the same way as the "call data" of transactions, with their origin being either an account identifier representing the parachain on the relay-chain or a special `Parachain` origin, at the choice of the sender (both may be assumed to be absolute indications of the messages origin).
+
+Downward messages (initiated by the relay-chain) are little more than an internal API to allow the relay-chain to inject a message into a parachain's queue directly and are not expected to be used much outside of system-level parachains.
+
+With lateral messages, the relay-chain never touches the payload data, dealing only in terms of hashes of the data. Parachain validators, in their reporting to the relay-chain, attest to a set of hashes of the message output queue, one for each lateral endpoint. If these hashes do not faithfully represent the message data that actually was output from the parachain it can be detected and punished.
+
+In this way, a single hash suffices for each batch of messages sent between each pair of blockchains for each block validated. Thus the relay-chain manages a hash-matrix of order `N**2` entries. In the case of 100 parachains, this matrix could be up to 9,900 hashes, though realistically it will be very sparse and there will be no need for the relay chain to actually store quite so many entries.
+
+This matrix allows future parachain validators to verify that a given `messages_in` queue is valid and by doing so allows Polkadot's shared security to make trust-free guarantees on message delivery.
+
+## Data availability
+
+
+
+
+
 ## APIs
 
-Parachains
+
 
