@@ -22,7 +22,7 @@ Datagrams of version 0 are such:
 - 4 bytes (magic): `0xff58434d`.
 - 4 bytes (version code, LE): `0x00000000`.
 - 2 bytes (Message type).
-- * bytes (Message parameters).
+- (*) bytes (Message parameters).
 
 Message type must be one of:
 
