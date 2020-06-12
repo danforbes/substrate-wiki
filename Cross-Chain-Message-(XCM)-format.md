@@ -10,15 +10,17 @@ In Polkadot, three message passing systems use this format: XCMP, HRMP and VMP.
 
 # Basic Top-level Format
 
-- `magic: u16 = 0xff00`: Prefix identifier.
-- `version: u16 = 0x0000`: Version of XCM; only zero supported currently.
+All data is SCALE encoded.
+
+- `magic: [u8; 2] = 0xff00`: Prefix identifier.
+- `version: u16 = 0u16`: Version of XCM; only zero supported currently.
 - `type: u16`: Message type.
 - `payload`: Message parameters.
 
 For version 0, message `type` must be one of:
 
-- 0x0000: Native Account Credited
-- 0x0100: Foreign Account Transfer
+- `0u16`: Native Account Credited
+- `1u16`: Foreign Account Transfer
 
 # Message Types
 
