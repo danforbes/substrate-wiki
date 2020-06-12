@@ -4,7 +4,7 @@ This page details the message format for Polkadot-based message passing between 
 
 In Polkadot, three message passing systems use this format: XCMP, HRMP and VMP.
 
-- **XCMP** *Cross-Chain Message Passing* highly scalable message passing between parachains.
+- **XCMP** *Cross-Chain Message Passing* highly scalable message passing between parachains with minimal work on the side of the Relay-chain.
 - **HRMP** *Horizontal Relay-based Message Passing* message passing, similar in effect to XCMP (messages between parachains) but implemented using VMP so messages are passed through the Relay-chain.
 - **VMP** *Vertical Message Passing* message passing between the Relay-chain itself and a parachain.
 
