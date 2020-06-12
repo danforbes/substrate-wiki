@@ -30,7 +30,7 @@ All data is SCALE encoded.
 
 For version 0, message `type` must be one of:
 
-- `0u16`: NAC
+- `0u16`: RCD
 - `1u16`: FAX
 - `2u16`: FAT
 - `3u16`: NFAT
@@ -39,7 +39,9 @@ For version 0, message `type` must be one of:
 
 # Message Types
 
-## NAC: Native Account Credited
+## RCD: Reserve Credit Derivative
+
+A notification message that the *Origin Chain*, acting as a *Reserve*, has received funds into a client account owned by the *Receiving Chain*. It is instructive only in so much as to dictate to the receiving chain the associated destination to which the sender (of the funds into the reserve account) would like the derivative funds to be credited. The funds are those which are native to the *Origin Chain*. Typically only used for downward messages.
 
 An *Amount of Funds*, measured in the *Native Currency* of the *Origin Chain* have been credited to the *Sovereign Account* of the *Recipient Chain* and a sub-account identifier is provided for the *Recipient Chain* to credit within its own context.
 
@@ -48,7 +50,12 @@ An *Amount of Funds*, measured in the *Native Currency* of the *Origin Chain* ha
 - `amount: Compact<u256>` The *Amount of Funds* that have been credited to the *Sovereign Account* of the *Recipient Chain* on the *Origin Chain*.
 - `destination: DestId` A universal destination ID which identifies the sub-account to be credited within the context of the *Recipient Chain*.
 
+
+
+
 ## FAX: Foreign Account Transfer
+
+An instructive message commanding the transfer of some amount of funds (measured in the native currency of the *Recipient Chain*) from the (presumed unique or otherwise primary) account owned by the *Origin Chain* to some other destination on the *Recipient Chain*. Typically only used for upward messages.
 
 An *Amount of Funds*, measured in the *Native Currency* of the *Recipient Chain* should be transfered from the *Sovereign Account* of the *Origin Chain* to the account identified by a universal `destination` identifier within the context of the *Recipient Chain*.
 
@@ -56,6 +63,9 @@ An *Amount of Funds*, measured in the *Native Currency* of the *Recipient Chain*
 
 - `amount: Compact<u256>` The *Amount of Funds* that should be transfered from the *Sovereign Account* of the *Origin Chain* on the *Recipient Chain*.
 - `destination: DestId` A universal destination identifier which identifies the account/owner/controller on the *Recipient Chain* to be credited.
+
+
+
 
 ## FAT: Fungible Asset Teleport
 
@@ -66,6 +76,9 @@ An `amount` of some fungible asset identified by an opaque datagram `asset_id` h
 - `amount: Compact<u256>` The *Amount of Funds* that should be transfered from the *Sovereign Account* of the *Origin Chain* on the *Recipient Chain*.
 - `asset: Vec<u8>` The fungible asset type (aka currency code) of the asset to be transfered. Known `asset` types are listed in the Appendix Asset Types.
 - `destination: DestId` A universal destination identifier which identifies the account/owner/controller on the *Recipient Chain* to be credited.
+
+
+
 
 ## NFAT: Non-Fungible Asset Teleport
 
