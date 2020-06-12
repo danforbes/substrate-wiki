@@ -10,15 +10,6 @@ In Polkadot, three message passing systems use this format: XCMP, HRMP and VMP.
 
 # Basic Top-level Format
 
-- 4 bytes (magic): `0xff58434d`
-- 4 bytes (version code).
-
-Depending on the version code, the rest of the format may be different.
-
-## Version 0
-
-Datagrams of version 0 are such:
-
 - `magic: u16 = 0xff00`: Prefix identifier.
 - `version: u16 = 0x0000`: Version of XCM; only zero supported currently.
 - `type: u16`: Message type.
