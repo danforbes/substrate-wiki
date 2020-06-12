@@ -24,29 +24,52 @@ For version 0, message `type` must be one of:
 
 # Message Types
 
-## Native Account Credited
+## NAC: Native Account Credited
 
-An *Amount of Funds*, measured in the *Native Currency* of the *Origin Chain* have been credited to the *Sovereign Account* of the *Recipient Chain* and a sub-account identifier is provided for the recipient chain to credit within its own context.
+An *Amount of Funds*, measured in the *Native Currency* of the *Origin Chain* have been credited to the *Sovereign Account* of the *Recipient Chain* and a sub-account identifier is provided for the *Recipient Chain* to credit within its own context.
 
 ### Parameter(s)
 
 - `amount: Compact<u256>` The *Amount of Funds* that have been credited to the *Sovereign Account* of the *Recipient Chain* on the *Origin Chain*.
 - `destination: DestId` A universal destination ID which identifies the sub-account to be credited within the context of the *Recipient Chain*.
 
-## Foreign Account Transfer
+## FAX: Foreign Account Transfer
 
-An *Amount of Funds*, measured in the *Native Currency* of the *Recipient Chain* should be transfered from the *Sovereign Account* of the *Origin Chain* to the account controlled by a 32-byte account identifier within the context of the *Recipient Chain*.
+An *Amount of Funds*, measured in the *Native Currency* of the *Recipient Chain* should be transfered from the *Sovereign Account* of the *Origin Chain* to the account identified by a universal `destination` identifier within the context of the *Recipient Chain*.
 
 ### Parameter(s)
 
 - `amount: Compact<u256>` The *Amount of Funds* that should be transfered from the *Sovereign Account* of the *Origin Chain* on the *Recipient Chain*.
 - `destination: DestId` A universal destination identifier which identifies the account/owner/controller on the *Recipient Chain* to be credited.
 
+## FAT: Fungible Asset Teleport
+
+An `amount` of some fungible asset identified by an opaque datagram `asset_id` have been removed from existence on the *Origin Chain* and should be credited on the *Recipient Chain* into the account identified by a universal `destination` identifier.
+
+### Parameter(s)
+
+- `amount: Compact<u256>` The *Amount of Funds* that should be transfered from the *Sovereign Account* of the *Origin Chain* on the *Recipient Chain*.
+- `asset: Vec<u8>` The fungible asset type (aka currency code) of the asset to be transfered. Known `asset` types are listed in the Appendix Asset Types.
+- `destination: DestId` A universal destination identifier which identifies the account/owner/controller on the *Recipient Chain* to be credited.
+
+## NFAT: Non-Fungible Asset Teleport
+
+An `amount` of some fungible asset identified by an opaque datagram `asset_id` have been removed from existence on the *Origin Chain* and should be credited on the *Recipient Chain* into the account identified by a universal `destination` identifier.
+
+### Parameter(s)
+
+- `class: Vec<u8>` The class of asset; known classes are listed in the Appendix Classes.
+- `id: Vec<u8>` The specific instance of the asset, within the asset `class`.
+- `destination: DestId` A universal destination identifier which identifies the account/owner/controller on the *Recipient Chain* to be credited.
+
+
 # Definitions
 
 - *Sovereign Account* An account controlled solely and irrevocably by a particular chain.
 - *Origin Chain* The chain from which a given message has been delivered. This is always queryable by the receiving code using the message-passing protocol.
 - *Recipient Chain* The chain to which a given message has been delivered.
+- *Teleport* Destroying an asset (or amount of funds/token/currency) in one place and minting a corresponding amount in a second place. Imagine the teleporter from *Star Trek*. The two places need not be equivalent in nature (e.g. could be a UTXO chain that destroys assets and an account-based chain that mints them). Neither place acts as a reserve or derivative for the other. Though the nature of the tokens may be different, neither place is more canonical than the other.
+- *Transfer* The movement of funds from one controlling authority to another. This is within the same chain or overall asset-ownership environment and at the same abstraction level. 
 
 # `DestId`: Universal Destination Identifiers
 
@@ -69,3 +92,14 @@ This is a generic 32-byte multi-crypto Account ID, as used across Polkadot, Kusa
 The Substrate Frame framework includes the `indices` pallet allowing accounts to be refered to through a short-form index. This refers to the account whose index is provided.
 
 - `index: Compact<u64>` The 64-bit account index.
+
+# Appendix: Asset Types
+
+- `b"DOT"`
+- `b"KSM"`
+- `b"BTC"`
+- `b"ETH"`
+
+# Appendix: Classes
+
+(None yet.)
