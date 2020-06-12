@@ -8,6 +8,17 @@ In Polkadot, three message passing systems use this format: XCMP, HRMP and VMP.
 - **VMP** *Vertical Message Passing* message passing between the Relay-chain itself and a parachain.
 - **HRMP** *Horizontal Relay-based Message Passing* message passing, similar in effect to XCMP (messages between parachains) but implemented using VMP so messages are passed through the Relay-chain.
 
+
+# Definitions
+
+- *Sovereign Account* An account controlled solely and irrevocably by a particular chain.
+- *Origin Chain* The chain from which a given message has been delivered. This is always queryable by the receiving code using the message-passing protocol.
+- *Recipient Chain* The chain to which a given message has been delivered.
+- *Teleport* Destroying an asset (or amount of funds/token/currency) in one place and minting a corresponding amount in a second place. Imagine the teleporter from *Star Trek*. The two places need not be equivalent in nature (e.g. could be a UTXO chain that destroys assets and an account-based chain that mints them). Neither place acts as a reserve or derivative for the other. Though the nature of the tokens may be different, neither place is more canonical than the other.
+- *Transfer* The movement of funds from one controlling authority to another. This is within the same chain or overall asset-ownership environment and at the same abstraction level. 
+
+
+
 # Basic Top-level Format
 
 All data is SCALE encoded.
@@ -23,6 +34,8 @@ For version 0, message `type` must be one of:
 - `1u16`: FAX
 - `2u16`: FAT
 - `3u16`: NFAT
+
+
 
 # Message Types
 
@@ -65,13 +78,6 @@ An `amount` of some fungible asset identified by an opaque datagram `asset_id` h
 - `destination: DestId` A universal destination identifier which identifies the account/owner/controller on the *Recipient Chain* to be credited.
 
 
-# Definitions
-
-- *Sovereign Account* An account controlled solely and irrevocably by a particular chain.
-- *Origin Chain* The chain from which a given message has been delivered. This is always queryable by the receiving code using the message-passing protocol.
-- *Recipient Chain* The chain to which a given message has been delivered.
-- *Teleport* Destroying an asset (or amount of funds/token/currency) in one place and minting a corresponding amount in a second place. Imagine the teleporter from *Star Trek*. The two places need not be equivalent in nature (e.g. could be a UTXO chain that destroys assets and an account-based chain that mints them). Neither place acts as a reserve or derivative for the other. Though the nature of the tokens may be different, neither place is more canonical than the other.
-- *Transfer* The movement of funds from one controlling authority to another. This is within the same chain or overall asset-ownership environment and at the same abstraction level. 
 
 # `DestId`: Universal Destination Identifiers
 
@@ -95,12 +101,24 @@ The Substrate Frame framework includes the `indices` pallet allowing accounts to
 
 - `index: Compact<u64>` The 64-bit account index.
 
+
+
+# Examples
+
+`0xff0000000200040c4254430004d43593c715fdd31c61141abd04a99fd6822c8558854ccde39a5684e7a56da27d`
+
+This indicates to the receiving chain that the account controlled by Substrates testing Alice key (`subkey inspect //Alice`) should be credited with 1 Satoshi worth of its variant/interpretation of the Bitcoin (`BTC`) token.
+
+
 # Appendix: Asset Types
 
 - `b"DOT"`
 - `b"KSM"`
 - `b"BTC"`
 - `b"ETH"`
+
+
+
 
 # Appendix: Classes
 
