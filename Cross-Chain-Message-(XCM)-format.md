@@ -19,8 +19,10 @@ All data is SCALE encoded.
 
 For version 0, message `type` must be one of:
 
-- `0u16`: Native Account Credited
-- `1u16`: Foreign Account Transfer
+- `0u16`: NAC
+- `1u16`: FAX
+- `2u16`: FAT
+- `3u16`: NFAT
 
 # Message Types
 
