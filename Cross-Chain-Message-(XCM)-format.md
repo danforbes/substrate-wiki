@@ -39,7 +39,7 @@ For version 0, message `type` must be one of:
 
 # Message Types
 
-## RCD: Reserved Derivative Credit
+## RDC: Reserved Derivative Credit
 
 A notification message that the *Origin Chain*, acting as a *Reserve*, has received funds into a client account owned by the *Receiving Chain*. It is instructive only in so much as to dictate to the receiving chain the associated destination to which the recipient chain may attribute the credit. The funds are specified in the native currency of the *Origin Chain*. Typically only used for downward messages.
 
