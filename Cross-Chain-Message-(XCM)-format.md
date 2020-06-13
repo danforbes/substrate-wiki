@@ -71,10 +71,18 @@ An instructive message to indicate that a given message should be relayed to a f
 
 ### Parameter(s)
 
+- `destination: ParaId` The chain index to which this `message` should be relayed within a `PRM`.
 - `message: Xcm` The message to be interpreted by the *Receiving Chain*.
-- `destination_chain: ParaId` The chain index to which this `message` should be relayed within a `PRM`.
 
 ## PRM: Parachain Relay Message
+
+A counterpart message to RMP, this is what is sent by the Relayer to the `destination` parachain mentioned in the RMP message. It is instructive only of the fact that an RMP with `message` and a `destination` equal to the *Receiving Parachain* was sent by the `source` parachain of the *Origin Relay-chain*.
+
+### Parameter(s)
+
+- `source: ParaId` The chain index from which this `message` has been relayed from an RMP.
+- `message: Xcm` The message to be interpreted by the *Receiving Chain*.
+
 
 ## FAT: Fungible Asset Teleport
 
