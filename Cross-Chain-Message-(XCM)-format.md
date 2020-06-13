@@ -30,7 +30,7 @@ All data is SCALE encoded.
 
 For version 0, message `type` must be one of:
 
-- `0u16`: RCD
+- `0u16`: RDC
 - `1u16`: FAX
 - `2u16`: FAT
 - `3u16`: NFAT
@@ -39,11 +39,11 @@ For version 0, message `type` must be one of:
 
 # Message Types
 
-## RCD: Reserve Credit Derivative
+## RCD: Reserved Derivative Credit
 
-A notification message that the *Origin Chain*, acting as a *Reserve*, has received funds into a client account owned by the *Receiving Chain*. It is instructive only in so much as to dictate to the receiving chain the associated destination to which the sender (of the funds into the reserve account) would like the derivative funds to be credited. The funds are those which are native to the *Origin Chain*. Typically only used for downward messages.
+A notification message that the *Origin Chain*, acting as a *Reserve*, has received funds into a client account owned by the *Receiving Chain*. It is instructive only in so much as to dictate to the receiving chain the associated destination to which the recipient chain may attribute the credit. The funds are specified in the native currency of the *Origin Chain*. Typically only used for downward messages.
 
-An *Amount of Funds*, measured in the *Native Currency* of the *Origin Chain* have been credited to the *Sovereign Account* of the *Recipient Chain* and a sub-account identifier is provided for the *Recipient Chain* to credit within its own context.
+In other words: An *Amount of Funds*, measured in the *Native Currency* of the *Origin Chain* have been credited to the *Sovereign Account* of the *Recipient Chain* and a sub-account identifier is provided for the *Recipient Chain* to credit within its own context.
 
 ### Parameter(s)
 
@@ -55,7 +55,7 @@ An *Amount of Funds*, measured in the *Native Currency* of the *Origin Chain* ha
 
 ## FAX: Foreign Account Transfer
 
-An instructive message commanding the transfer of some amount of funds (measured in the native currency of the *Recipient Chain*) from the (presumed unique or otherwise primary) account owned by the *Origin Chain* to some other destination on the *Recipient Chain*. Typically only used for upward messages.
+An instructive message commanding the transfer of some amount of funds (measured in the native currency of the *Recipient Chain*) from the (presumed unique or otherwise primary) account owned by the *Origin Chain* to some other destination on the *Recipient Chain*. Typically only used for upward messages. This cannot directly be used for sending funds from one parachain to another since there is no way of giving attribution for the derivate credit.
 
 An *Amount of Funds*, measured in the *Native Currency* of the *Recipient Chain* should be transfered from the *Sovereign Account* of the *Origin Chain* to the account identified by a universal `destination` identifier within the context of the *Recipient Chain*.
 
