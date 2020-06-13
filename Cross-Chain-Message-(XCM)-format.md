@@ -62,7 +62,7 @@ An *Amount of Funds*, measured in the *Native Currency* of the *Recipient Chain*
 ### Parameter(s)
 
 - `amount: Compact<u256>` The *Amount of Funds* that should be transfered from the *Sovereign Account* of the *Origin Chain* on the *Recipient Chain*.
-- `destination: DestId` A universal destination identifier which identifies the account/owner/controller on the *Recipient Chain* to be credited.
+- `destination: DestId` A universal destination identifier which identifies the account/owner/controller on the *Recipient Chain* to be credited. A type 3 (multi-level) ID indicates that an RDC message may be needed.
 
 
 ## RMP: Relay Message Parachain
