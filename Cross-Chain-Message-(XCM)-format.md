@@ -82,7 +82,7 @@ An `amount` of some fungible asset identified by an opaque datagram `asset_id` h
 
 ## NFAT: Non-Fungible Asset Teleport
 
-An `amount` of some fungible asset identified by an opaque datagram `asset_id` have been removed from existence on the *Origin Chain* and should be credited on the *Recipient Chain* into the account identified by a universal `destination` identifier.
+An unique instance of a non-fungible asset identified within its asset `class` by some individual `id` has been removed from existence on the *Origin Chain* and should be created on the *Recipient Chain* and owned the account identified by a universal `destination` identifier.
 
 ### Parameter(s)
 
