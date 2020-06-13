@@ -30,28 +30,14 @@ All data is SCALE encoded. We name the top-level XCM datatype `Xcm`.
 
 For version 0, message `type` must be one of:
 
-- `0u16`: RDC
-- `1u16`: FAX
+- `0u16`: FAX
+- `1u16`: FAC
 - `2u16`: FAT
 - `3u16`: NFAT
 
 
 
 # Message Types
-
-## RDC: Reserved Derivative Credit
-
-A notification message that the *Origin Chain*, acting as a *Reserve*, has received funds into a client account owned by the *Receiving Chain*. It is instructive only in so much as to dictate to the receiving chain the associated destination to which the recipient chain may attribute the credit. The funds are specified in the native currency of the *Origin Chain*. Typically only used for downward messages.
-
-In other words: An *Amount of Funds*, measured in the *Native Currency* of the *Origin Chain* have been credited to the *Sovereign Account* of the *Recipient Chain* and a sub-account identifier is provided for the *Recipient Chain* to credit within its own context.
-
-### Parameter(s)
-
-- `amount: Compact<u256>` The *Amount of Funds* that have been credited to the *Sovereign Account* of the *Recipient Chain* on the *Origin Chain*.
-- `destination: DestId` A universal destination ID which identifies the sub-account to be credited within the context of the *Recipient Chain*.
-
-
-
 
 ## FAX: Foreign Account Transfer
 
@@ -63,6 +49,22 @@ An *Amount of Funds*, measured in the *Native Currency* of the *Recipient Chain*
 
 - `amount: Compact<u256>` The *Amount of Funds* that should be transfered from the *Sovereign Account* of the *Origin Chain* on the *Recipient Chain*.
 - `destination: DestId` A universal destination identifier which identifies the account/owner/controller on the *Recipient Chain* to be credited. A type 3 (multi-level) ID indicates that an RDC message may be needed.
+- `source: DestId` UDI identifing the true source of the transfer, in terms of the `Origin`. Null indicates the `Origin` itself.
+
+## FAC: Foreign Account Credit
+
+A notification message that the *Origin Chain*, acting as a *Reserve*, has received funds into a client account owned by the *Receiving Chain*. It is instructive only in so much as to dictate to the receiving chain the associated destination to which the recipient chain may attribute the credit. The funds are specified in the native currency of the *Origin Chain*. Typically only used for downward messages.
+
+In other words: An *Amount of Funds*, measured in the *Native Currency* of the *Origin Chain* have been credited to the *Sovereign Account* of the *Recipient Chain* and a sub-account identifier is provided for the *Recipient Chain* to credit within its own context.
+
+### Parameter(s)
+
+- `amount: Compact<u256>` The *Amount of Funds* that have been credited to the *Sovereign Account* of the *Recipient Chain* on the *Origin Chain*.
+- `destination: DestId` A universal destination ID which identifies the sub-account to be credited within the context of the *Recipient Chain*.
+- `source: DestId` UDI identifing the true source of the transfer, in terms of the `Origin`. Null indicates the `Origin` itself.
+
+
+
 
 
 ## RMP: Relay Message Parachain
@@ -93,7 +95,7 @@ An `amount` of some fungible asset identified by an opaque datagram `asset_id` h
 - `amount: Compact<u256>` The *Amount of Funds* that should be transfered from the *Sovereign Account* of the *Origin Chain* on the *Recipient Chain*.
 - `asset: Vec<u8>` The fungible asset type (aka currency code) of the asset to be transfered. Known `asset` types are listed in the Appendix Asset Types.
 - `destination: DestId` A universal destination identifier which identifies the account/owner/controller on the *Recipient Chain* to be credited.
-
+- `source: DestId` UDI identifing the true source of the transfer, in terms of the `Origin`. Null indicates the `Origin` itself.
 
 
 
