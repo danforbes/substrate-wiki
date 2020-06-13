@@ -21,7 +21,7 @@ In Polkadot, three message passing systems use this format: XCMP, HRMP and VMP.
 
 # Basic Top-level Format
 
-All data is SCALE encoded.
+All data is SCALE encoded. We name the top-level XCM datatype `Xcm`.
 
 - `magic: [u8; 2] = 0xff00`: Prefix identifier.
 - `version: u16 = 0u16`: Version of XCM; only zero supported currently.
@@ -65,7 +65,16 @@ An *Amount of Funds*, measured in the *Native Currency* of the *Recipient Chain*
 - `destination: DestId` A universal destination identifier which identifies the account/owner/controller on the *Recipient Chain* to be credited.
 
 
+## RMP: Relay Message Parachain
 
+An instructive message to indicate that a given message should be relayed to a further *Destination Chain*. The actual message presented to the *Destination Chain* will be of type `Parachain Relayed Message` and properly present the original sender in it.
+
+### Parameter(s)
+
+- `message: Xcm` The message to be interpreted by the *Receiving Chain*.
+- `destination_chain: ParaId` The chain index to which this `message` should be relayed within a `PRM`.
+
+## PRM: Parachain Relay Message
 
 ## FAT: Fungible Asset Teleport
 
@@ -76,6 +85,7 @@ An `amount` of some fungible asset identified by an opaque datagram `asset_id` h
 - `amount: Compact<u256>` The *Amount of Funds* that should be transfered from the *Sovereign Account* of the *Origin Chain* on the *Recipient Chain*.
 - `asset: Vec<u8>` The fungible asset type (aka currency code) of the asset to be transfered. Known `asset` types are listed in the Appendix Asset Types.
 - `destination: DestId` A universal destination identifier which identifies the account/owner/controller on the *Recipient Chain* to be credited.
+
 
 
 
@@ -115,6 +125,18 @@ The Substrate Frame framework includes the `indices` pallet allowing accounts to
 - `index: Compact<u64>` The 64-bit account index.
 
 
+## Type 2: Parachain Primary Account
+
+The Polkadot Relay pallet collection includes the idea of a Relay-chain with one or more Parachains/threads, each identified by a `ParaId`,  scalar `u32` value. The Relay-chain has associated sovereign accounts controlled by its parachains. This indicates the primary such account.
+
+- `index: Compact<u32>` The 32-bit `ParaId`.
+
+## Type 3: Sub-destination
+
+Many destination types, e.g. smart contracts and parachains, can have secondary destinations nested beneath them and interpreted within their context. This allows for that.
+
+- `primary: DestId` The primary destination.
+- `subordinate: DestId` The subordinate destination, interpreted in the context of the primary destination.
 
 # Examples
 
