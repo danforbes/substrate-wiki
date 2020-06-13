@@ -123,7 +123,7 @@ The Substrate Frame framework includes the `indices` pallet allowing accounts to
 This indicates to the receiving chain that the account controlled by Substrates testing Alice key (`subkey inspect //Alice`) should be credited with 1 Satoshi worth of its variant/interpretation of the Bitcoin (`BTC`) token.
 
 
-# Appendix: Asset Types
+# Appendix: Fungible Asset Types
 
 - `b"DOT"`
 - `b"KSM"`
@@ -133,6 +133,6 @@ This indicates to the receiving chain that the account controlled by Substrates 
 
 
 
-# Appendix: Classes
+# Appendix: Non-Fungible Asset Classes
 
 (None yet.)
