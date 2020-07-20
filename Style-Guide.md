@@ -1,1 +1,1 @@
-Moved here: https://wiki.parity.io/Substrate-Style-Guide
+Moved here: https://github.com/paritytech/substrate/blob/master/docs/STYLE_GUIDE.md
